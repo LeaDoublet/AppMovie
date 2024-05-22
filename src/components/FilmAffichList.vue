@@ -10,6 +10,7 @@
           lg="2"
           xl="2"
         >
+        <router-link :to="'/PageDetail/' + film.id">
           <v-card color="primary" dark>
             <v-img
               :src="'https://image.tmdb.org/t/p/w500/' + film.affiche"
@@ -20,6 +21,7 @@
               {{ film.titre }}
             </v-card-title>
           </v-card>
+        </router-link>
         </v-col>
       </v-row>
     </v-container>
@@ -27,7 +29,7 @@
   
   <script>
   import { reactive, onMounted, watch} from 'vue';
-  
+  //import { useRouter } from 'vue-router';
   class Film {
     constructor(filmJSON) {
       this._id = filmJSON.id;
