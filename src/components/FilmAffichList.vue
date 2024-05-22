@@ -1,13 +1,28 @@
 <template>
-    <div>
-        <h3>Liste des films</h3>
-        <ul>
-            <li v-for="film in listeFilms" :key="film.id">
-                <img :src="'https://image.tmdb.org/t/p/w500/' + film.affiche" :alt="film.titre" class="image" />
-                <p>{{ film.titre }}</p>
-            </li>
-        </ul>
-    </div>
+    <v-container>
+        <v-row dense>
+            <v-col
+                v-for="film in listeFilms"
+                :key="film.id"
+                cols="12"
+                sm="6"
+                md="3"
+                lg="2"
+                xl="2"
+            >
+            <v-card color="primary" dark>
+            <v-img
+                :src="'https://image.tmdb.org/t/p/w500/' + film.affiche"
+                height="200px"
+                cover
+            ></v-img>
+            <v-card-title>
+                {{ film.titre }}
+            </v-card-title>
+            </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 <style scoped>
 .image {
