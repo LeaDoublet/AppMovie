@@ -2,10 +2,19 @@
     <div>
         <h3>Liste des films</h3>
         <ul>
-            <li v-for="film in listeFilms" :key="film.id">{{ film.titre }}</li>
+            <li v-for="film in listeFilms" :key="film.id">
+                <img :src="'https://image.tmdb.org/t/p/w500/' + film.affiche" :alt="film.titre" class="image" />
+                <p>{{ film.titre }}</p>
+            </li>
         </ul>
     </div>
 </template>
+<style scoped>
+.image {
+    width: 200px;
+    height: 300px;
+}
+</style>
 <script setup>
     
     import { reactive, onMounted } from 'vue';
