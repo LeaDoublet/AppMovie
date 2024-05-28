@@ -3,6 +3,9 @@ import PageItem1 from "@/pages/PageItem1.vue";
 import PageItem2 from "@/pages/PageItem2.vue";
 import PageDetail from "@/pages/PageDetail/[id].vue";
 import PageAbout from "@/pages/PageAbout.vue";
+import PageFilms from "@/pages/PageFilms.vue";
+import PageActeurs from "@/pages/PageActeurs.vue";
+import { components } from "vuetify/dist/vuetify-labs.js";
 
 const routes = [
   {
@@ -25,7 +28,14 @@ const routes = [
     path: "/PageAbout",
     component: PageAbout,
   },
-  // Ajoutez d'autres routes au besoin
+  {
+    path: "/PageFilms",
+    component: PageFilms,
+  },
+  {
+    path: "/PageActeurs",
+    component: PageActeurs,
+  },
 ];
 
 const router = createRouter({
